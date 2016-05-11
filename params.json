@@ -1,0 +1,6 @@
+{
+  "name": "Formsubmission",
+  "tagline": "回车触发表单提交的一些坑",
+  "body": "\t/**\r\n\t * 回车触发表单提交的一些坑\r\n\t *\r\n\t * @author emperorliu Tencent KM\r\n\t * @return 表单各种情况的的一些demo\r\n\t */\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
