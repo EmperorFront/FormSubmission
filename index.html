@@ -1,0 +1,67 @@
+<html><head> 
+<meta http-equiv="Content-Type" content="text/html; charset=GBK"> 
+<title>submit</title> 
+</head> 
+<body> 
+<h1>文本框中按enter键触发提交表单</h1>
+<p class="mt_l mb_l"><em>结论：如不希望触发，则使用type=button，且当input文本框唯一时隐藏一个</em></p> 
+<h2 class="red">错误案例：默认情况下，一个文本框的时候，提交，不管按钮type是submit还是button</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="button" value="提交"> 
+</form> 
+<h2>解决方案：一个文本框(type=text)，方法是加一个隐藏掉的文本框</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="text" style="display:none">
+
+
+<input type="button" value="提交"> 
+</form> 
+<h2 class="red">错误案例：只要有type为submit的按钮存在，一个文本框还是多个文本框都提交，仅仅隐藏文本框无用</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="submit" value="提交"> 
+<input type="text" style="display:none"> 
+</form> 
+<h2>解决方案：隐藏文本框+使用button</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="button" value="提交"> 
+<input type="text" style="display:none"> 
+</form> 
+<h2 class="red">错误案例：只要有type为submit的按钮存在，一个文本框还是多个文本框都提交</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="text"> 
+<input type="submit" value="提交"> 
+</form> 
+<h2>解决方案：用type为button的按钮</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="text"> 
+<input type="button" value="提交"> 
+</form> 
+<h2 class="yellow">其他查到的可能问题：用button元素时，FX和IE下有不同的表现</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="text"> 
+<button>提交</button> 
+</form> 
+<h2>其他查到的可能问题：radio和checkbox在FF下也会触发提交表单，在IE下不会，在Chrome下相当于普通其他无关元素（当是div即可）依旧只关注type=text的数量</h2> 
+<form action="http://km.oa.com"> 
+<input type="text">
+<input type="radio" name="a"> 
+<input type="checkbox" name="b"> 
+<input type="checkbox" name="c"> 
+<input type="button" value="提交"> 
+</form> 
+<h2>其他查到的可能问题：type为image的按钮，等同于type为submit的效果</h2> 
+<form action="http://km.oa.com"> 
+<input type="text"> 
+<input type="text"> 
+<input type="image" class="js-search-btn-default bg-sprites-km search-btn" value="搜索">
+</form> 
+
+
+</body></html>
