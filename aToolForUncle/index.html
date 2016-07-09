@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+输入abcd.....以空格为分割<input id="abcd" style="width: 60%" type="text">
+<p></p>
+输入y
+<input id="y" type="text">
+<p></p>
+<button onclick="end()">输完了算！</button>
+结果为：
+<div id ="end"></div>
+<script src="../jquery-3.0.0.js"></script>
+<script>
+
+    function end (){
+        var abcd = $('#abcd').val();
+        var abcdotch = abcd.split(' ');
+        var y = $('#y').val();
+        var endval =0;
+        for (var i=0; i<abcdotch.length; i++){
+            endval = endval + parseFloat(abcdotch[i]);
+        }
+        endval = endval - (1.88 * (abcdotch.length-1) * parseFloat(y));
+        $('#end').html(endval);
+    }
+</script>
+</body>
+</html>
